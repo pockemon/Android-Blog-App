@@ -9,8 +9,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-        android.content.Intent home_page = new android.content.Intent(MainActivity.this, LoginActivity.class);
-        startActivity(home_page);
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        com.google.firebase.auth.FirebaseUser currentUser = com.google.firebase.auth.FirebaseAuth.getInstance().getCurrentUser();
+
+        if (currentUser == null) {
+
+            // User is signed in
+            android.content.Intent home_page = new android.content.Intent(MainActivity.this, LoginActivity.class);
+            startActivity(home_page);
+            finish();
+
+        }
+
     }
 }

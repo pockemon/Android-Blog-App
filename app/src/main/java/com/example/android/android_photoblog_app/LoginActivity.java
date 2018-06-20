@@ -1,7 +1,7 @@
 package com.example.android.android_photoblog_app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -21,12 +21,21 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
 
-        loginEmailText = (android.widget.EditText) findViewById(com.example.android.android_photoblog_app.R.id.login_email);
-        loginPassText = (android.widget.EditText) findViewById(com.example.android.android_photoblog_app.R.id.login_password);
+        loginEmailText = (android.widget.EditText) findViewById(com.example.android.android_photoblog_app.R.id.reg_email);
+        loginPassText = (android.widget.EditText) findViewById(com.example.android.android_photoblog_app.R.id.reg_confirmpass);
         loginBtn = (android.widget.Button) findViewById(com.example.android.android_photoblog_app.R.id.login_btn);
         loginRegBtn = (android.widget.Button) findViewById(com.example.android.android_photoblog_app.R.id.login_reg_btn);
         loginProgress = (android.widget.ProgressBar) findViewById(com.example.android.android_photoblog_app.R.id.login_progress);
 
+
+        loginRegBtn.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View view) {
+
+                android.content.Intent regIntent = new android.content.Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(regIntent);
+            }
+        });
 
         loginBtn.setOnClickListener(new android.view.View.OnClickListener() {
             @Override

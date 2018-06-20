@@ -7,4 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.android_photoblog_app.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_Toolbar"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        tools:layout_editor_absoluteX="8dp"></android.support.v7.widget.Toolbar>
 </android.support.constraint.ConstraintLayout>
